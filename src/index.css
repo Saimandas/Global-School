@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root{color-scheme:light;}
+.dark{color-scheme:dark;}
+
+@theme{
+--color-background:#eef4ea;
+--color-foreground:#1f2f20;
+--color-primary:#1b5e20;
+--color-primary-foreground:#ffffff;
+--color-secondary:#2e7d32;
+--color-secondary-foreground:#ffffff;
+--color-accent:#c89b1d;
+--color-accent-foreground:#ffffff;
+--color-muted:#e3ece0;
+--color-muted-foreground:#5c6c5f;
+--color-card:#ffffff;
+--color-card-foreground:#1f2f20;
+--color-border:#d7e2d2;
+--color-ring:#2e7d32;
+--color-success:#16a34a;
+--color-warning:#f59e0b;
+--color-destructive:#dc2626;
+--radius-sm:.45rem;
+--radius-md:.8rem;
+--radius-lg:1.2rem;
+--radius-xl:1.7rem;
+--shadow-sm:0 4px 10px rgba(0,0,0,.05);
+--shadow-md:0 15px 35px rgba(0,0,0,.08);
+--shadow-lg:0 25px 60px rgba(0,0,0,.14);
+--font-sans:"Inter",sans-serif;
+--font-heading:"Poppins",sans-serif;
+--animate-marquee:marquee 35s linear infinite;
+--gradient-primary:linear-gradient(135deg,#1b5e20,#2e7d32);
+--gradient-secondary:linear-gradient(135deg,#2e7d32,#43a047);
+--gradient-accent:linear-gradient(135deg,#c89b1d,#e4c04a);
+--gradient-card:linear-gradient(180deg,#ffffff,#fafcf8);
+--gradient-hero:linear-gradient(180deg,#f7faf5,#eef4ea,#ffffff);
+--gradient-footer:linear-gradient(135deg,#0d3b11,#1b5e20);
+@keyframes marquee{from{transform:translateX(0%)}to{transform:translateX(-50%)}}
+}
+
+.dark{
+--color-background:#101b11;
+--color-foreground:#f5faf5;
+--color-primary:#43a047;
+--color-primary-foreground:#ffffff;
+--color-secondary:#66bb6a;
+--color-secondary-foreground:#ffffff;
+--color-accent:#e4c04a;
+--color-accent-foreground:#111827;
+--color-muted:#1b2e1d;
+--color-muted-foreground:#b8cdbb;
+--color-card:#18311c;
+--color-card-foreground:#f5faf5;
+--color-border:#315238;
+--gradient-primary:linear-gradient(135deg,#2e7d32,#43a047);
+--gradient-secondary:linear-gradient(135deg,#43a047,#66bb6a);
+--gradient-accent:linear-gradient(135deg,#c89b1d,#e4c04a);
+--gradient-card:linear-gradient(180deg,#18311c,#224328);
+--gradient-hero:linear-gradient(180deg,#101b11,#18311c,#204126);
+--gradient-footer:linear-gradient(135deg,#08100a,#102715);
+}
+
+html{scroll-behavior:smooth;}
+body{margin:0;min-height:100vh;background:var(--gradient-hero);color:var(--color-foreground);font-family:var(--font-sans);}
+*{box-sizing:border-box;}
+::selection{background:var(--color-primary);color:#fff;}
+.bg-gradient-primary{background:var(--gradient-primary);}
+.bg-gradient-secondary{background:var(--gradient-secondary);}
+.bg-gradient-accent{background:var(--gradient-accent);}
+.bg-gradient-card{background:var(--gradient-card);}
+.bg-gradient-footer{background:var(--gradient-footer);}
+.bg-gradient-hero{background:var(--gradient-hero);}
