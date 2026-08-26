@@ -160,7 +160,7 @@ const Admission = () => {
                   </span>
                 </div>
 
-                <div className="flex items-start justify-between border-b border-border pb-4">
+                {/* <div className="flex items-start justify-between border-b border-border pb-4">
                   <div>
                     <h4 className="font-semibold">
                       Secondary
@@ -173,23 +173,9 @@ const Admission = () => {
                   <span className="text-sm">
                     Previous Class
                   </span>
-                </div>
+                </div> */}
 
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h4 className="font-semibold">
-                      Higher Secondary
-                    </h4>
-
-                    <p className="text-sm text-muted-foreground">
-                      Classes XI–XII
-                    </p>
-                  </div>
-
-                  <span className="text-sm">
-                    Class X Pass
-                  </span>
-                </div>
+                
 
               </div>
             </div>
@@ -367,7 +353,7 @@ const Admission = () => {
                     </p>
 
                     <h4 className="font-semibold">
-                      +91 98765 43210
+                      +91 8812018503
                     </h4>
                   </div>
                 </div>

@@ -1,31 +1,37 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-const HeroCarousel = ({slides}) => {
-  return (
-   <Swiper modules={[Navigation]} navigation
-    modules={[Navigation, Pagination, Autoplay]}
-      navigation
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }}
-      loop
-      slidesPerView={1}
-      c className="h-[500px] w-full overflow-hidden rounded-3xl border border-border bg-card shadow-lg">
-      {/* <SwiperSlide>
-        <img
-          src="https://picsum.photos/1200/800"
-          className="h-[500px] w-full object-cover"
-        />
-      </SwiperSlide> */}
-      {
-        slides.map((slide) => (
-          <SwiperSlide key={slide.id} className=" bg-black">
-            <img src={slide.file} className=" h-[500px]  w-full object-cover"/>
-          </SwiperSlide>
-        ))
-      }
-    </Swiper>
-  )
-}
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-export default HeroCarousel
+const HeroCarousel = ({ slides = [] }) => {
+  return (
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      navigation={true}
+      pagination={{ clickable: true }}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      loop={slides.length > 1}
+      slidesPerView={1}
+      spaceBetween={0}
+      className="h-[500px] w-full overflow-hidden rounded-3xl border border-border bg-card shadow-lg"
+    >
+      {slides.map((slide) => (
+        <SwiperSlide key={slide.id} className="bg-black">
+          <img
+            src={slide.file}
+            alt={slide.title || "School gallery"}
+            className="h-[500px] w-full object-cover"
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+};
+
+export default HeroCarousel;

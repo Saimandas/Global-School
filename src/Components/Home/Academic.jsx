@@ -4,45 +4,31 @@ import {
   Baby,
   BookOpen,
   FlaskConical,
-  GraduationCap,
   ArrowRight,
 } from "lucide-react";
 
- const academicPrograms = [
+const academicPrograms = [
   {
     id: 1,
     title: "Pre-Primary",
     classes: "Nursery - UKG",
-    description: "...",
+    description:
+      "A joyful and nurturing environment where young learners develop confidence, curiosity, and strong foundations for their educational journey.",
     icon: Baby,
   },
   {
     id: 2,
     title: "Primary",
     classes: "Classes I - V",
-    description: "...",
+    description:
+      "Building strong academic foundations through engaging learning experiences that encourage creativity, confidence, and a love for learning.",
     icon: BookOpen,
-  },
-  {
-    id: 3,
-    title: "Secondary",
-    classes: "Classes VI - X",
-    description: "...",
-    icon: FlaskConical,
-  },
-  {
-    id: 4,
-    title: "Higher Secondary",
-    classes: "Classes XI - XII",
-    description: "...",
-    icon: GraduationCap,
-  },
+  }
 ];
-
 
 const Academic = () => {
   return (
-    <section className="py-24 bg-muted">
+    <section className="bg-muted py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -54,13 +40,13 @@ const Academic = () => {
           </h2>
 
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
-            From early childhood education to higher secondary, we provide a
+            From early childhood education to secondary school, we provide a
             nurturing environment that empowers every student to learn, grow,
             and succeed.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
           {academicPrograms.map((program) => {
             const Icon = program.icon;
 
@@ -85,10 +71,10 @@ const Academic = () => {
                   {program.description}
                 </p>
 
-                <button className="mt-auto flex items-center gap-2 pt-8 font-semibold text-primary transition-all duration-300 group-hover:gap-3">
+                {/* <button className="mt-auto flex items-center gap-2 pt-8 font-semibold text-primary transition-all duration-300 group-hover:gap-3">
                   Explore Program
                   <ArrowRight size={18} />
-                </button>
+                </button> */}
               </div>
             );
           })}

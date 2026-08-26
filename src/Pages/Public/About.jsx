@@ -13,7 +13,7 @@ const About = () => {
             {/* Image */}
 
             <img
-              src="https://picsum.photos/700/700"
+              src="/School.JPG"
               alt="School"
               className="h-full w-full object-cover"
             />
@@ -51,7 +51,7 @@ const About = () => {
                   </p>
 
                   <h3 className="mt-2 text-xl font-semibold">
-                    2001
+                    2026
                   </h3>
                 </div>
 
@@ -61,7 +61,7 @@ const About = () => {
                   </p>
 
                   <h3 className="mt-2 text-xl font-semibold">
-                    AHSEC / SEBA
+                    CBSE
                   </h3>
                 </div>
 

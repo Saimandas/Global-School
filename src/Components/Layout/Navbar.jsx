@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import img from '../../../public/Global_School_Logo-removebg-preview.png'
-import Button from "../UI/Button";
+import Button from "../ui/Button";
 
 const Navbar = () => {
 
@@ -10,8 +10,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Our Courses", path: "/courses" },
+    // { name: "Our Courses", path: "/courses" },
     { name: "Admission", path: "/admission" },
+    {name:"Principal",path:"/principal"},
     { name: "Gallery", path: "/gallery" },
     {name:"Teachers",path:"/teachers"},
     { name: "Announcements", path: "/announcements" },

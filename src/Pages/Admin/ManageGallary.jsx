@@ -47,6 +47,8 @@ const ManageGallery = () => {
   async function getGallery() {
   try {
     const data = await readData("Gallery");
+    console.log(data);
+    
     setImages(data);
   } catch (error) {
     toast.error(error.message);

@@ -118,19 +118,20 @@ const Footer = () => {
                 <p className="text-primary-foreground/80">
                   Global School
                   <br />
-                  Assam, India
+                  Saljhora, Kajalgaon, Chirang, Assam.
                 </p>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone size={20} />
                 <a
-                  href="tel:+911234567890"
+                  href="tel:++918812018503"
                   className="text-primary-foreground/80 hover:text-white"
                 >
-                  +91 12345 67890
+                 +91 8812018503 <br /> +91 8472043949.
                 </a>
               </div>
+              
 
               <div className="flex items-center gap-3">
                 <Mail size={20} />

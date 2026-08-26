@@ -19,12 +19,14 @@ import ManageCategories from '../Pages/Admin/ManageCategories'
 import ManageSubjects from '../Pages/Admin/ManageSubjects'
 import ManageTeachers from '../Pages/Admin/ManageTeacher'
 import Teachers from '../Pages/Public/Teachers'
+import PrincipalDesk from '../Pages/Public/PrincipalDesk'
 const AppRoutes = () => {
   return (
     <Routes>
         <Route element={<MainLayout />}>
             <Route index element={<HomePage/>} />
             <Route path='courses' element={<Courses/>}/>
+            <Route path='principal' element={<PrincipalDesk/>}/>
             <Route path='courses/:slug' element={<CourseDetails/>}/>
             <Route path='admission' element={<Admission/>}/>
             <Route path='gallery' element={<Gallery/>}/>

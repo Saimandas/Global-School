@@ -40,8 +40,7 @@ const Contact = () => {
                     <h3 className="font-semibold">Address</h3>
 
                     <p className="text-muted-foreground">
-                      Bakua, Baksa,<br />
-                      Assam - 781XXX
+                      Saljhora, Kajalgaon, Chirang, Assam.
                     </p>
                   </div>
                 </div>
@@ -53,7 +52,9 @@ const Contact = () => {
                     <h3 className="font-semibold">Phone</h3>
 
                     <p className="text-muted-foreground">
-                      +91 98765 43210
+                         ____ 0366429055 <br />
+                      +91 8472043949 <br />
+                      +91 8812018503 
                     </p>
                   </div>
                 </div>
