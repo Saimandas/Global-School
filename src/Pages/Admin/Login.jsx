@@ -5,8 +5,8 @@ import Container from "../../Components/ui/Container";
 import Button from "../../Components/ui/Button";
 
 const data = {
-  username: "GlobalSchool",
-  password: "Admin@123",
+  username:import.meta.env.VITE_ADMIN_USERNAME,
+  password:import.meta.env.VITE_ADMIN_PASSWORD
 };
 
 function AdminLogin() {
@@ -16,9 +16,10 @@ function AdminLogin() {
   const navigate = useNavigate();
 
   const login = () => {
-    console.log("hello");
     
-    if (username === data.username && password === data.password) {
+     console.log(data.username,data.password);
+    if (username == data.username && password == data.password) {
+      console.log("hello");
         sessionStorage.setItem("isLoggedIn","true")
         navigate("/admin/",{replace:true});     
         return

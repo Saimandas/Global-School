@@ -59,20 +59,20 @@ const Dashboard = () => {
       desc:"Manage gallery images.",
       gradient:"from-emerald-600 via-green-700 to-teal-800"
     },
-    {
-      title:"Categories",
-      icon:Building2,
-      to:"/admin/categories",
-      desc:"Academic categories.",
-      gradient:"from-orange-500 via-amber-600 to-yellow-700"
-    },
-    {
-      title:"Subjects",
-      icon:BookOpen,
-      to:"/admin/subjects",
-      desc:"Manage subjects.",
-      gradient:"from-indigo-600 via-violet-700 to-purple-800"
-    },
+    // {
+    //   title:"Categories",
+    //   icon:Building2,
+    //   to:"/admin/categories",
+    //   desc:"Academic categories.",
+    //   gradient:"from-orange-500 via-amber-600 to-yellow-700"
+    // },
+    // {
+    //   title:"Subjects",
+    //   icon:BookOpen,
+    //   to:"/admin/subjects",
+    //   desc:"Manage subjects.",
+    //   gradient:"from-indigo-600 via-violet-700 to-purple-800"
+    // },
     {
       title:"Teachers",
       icon:GraduationCap,

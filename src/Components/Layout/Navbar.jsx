@@ -11,7 +11,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     // { name: "Our Courses", path: "/courses" },
-    { name: "Admission", path: "/admission" },
+    // { name: "Admission", path: "/admission" },
     {name:"Principal",path:"/principal"},
     { name: "Gallery", path: "/gallery" },
     {name:"Teachers",path:"/teachers"},
@@ -145,7 +145,7 @@ const Navbar = () => {
 
           ))}
 
-          <NavLink
+          {/* <NavLink
             to="/admission"
             onClick={() => setIsOpen(false)}
             className="mt-auto"
@@ -153,7 +153,7 @@ const Navbar = () => {
             <Button className="w-full">
               Apply Now
             </Button>
-          </NavLink>
+          </NavLink> */}
 
         </nav>
 
