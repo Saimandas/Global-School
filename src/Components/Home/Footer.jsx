@@ -12,7 +12,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import Container from "../ui/Container";
+import Container from "../UI/Container";
 
 const quickLinks = [
   { name: "Home", path: "/" },

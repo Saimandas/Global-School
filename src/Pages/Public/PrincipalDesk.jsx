@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../../Components/ui/Container";
+import Container from "../../Components/ui/Container.jsx";
 import {
   Quote,
   HeartHandshake,
