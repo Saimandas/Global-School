@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import img from '../../../public/Global_School_Logo-removebg-preview.png'
-import Button from "../ui/Button";
+import Button from "../UI/Button";
 
 const Navbar = () => {
 

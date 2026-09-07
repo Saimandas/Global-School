@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Container from '../ui/Container';
+import Container from '../UI/Container';
 import { readData } from '../../superbase/supabase';
 const NoticeBar = () => {
   const [notices, setnotices] = useState([])

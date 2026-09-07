@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Container from "../ui/Container";
+import Container from "../UI/Container";
 import { ArrowRight } from "lucide-react";
-import Button from "../ui/Button";
+import Button from "../UI/Button";
 import { readData } from "../../superbase/supabase";
 import { NavLink } from "react-router-dom";
 

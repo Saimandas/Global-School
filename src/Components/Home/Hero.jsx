@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Container from "../ui/Container";
+import Container from "../UI/Container";
 import HeroCarousel from "./HeroCarousel";
 import { readData } from "../../superbase/supabase";
 import {
