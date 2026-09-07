@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom'
 import HomePage from '../Pages/Public/HomePage'
 import MainLayout from '../Layout/MainLayout'
 import Courses from '../Pages/Public/Courses'
-import CourseDetails from '../Pages/Public/CourseDetail'
 import Admission from '../Pages/Public/Admission'
 import AdminLayout from '../Layout/AdminLayout'
 import Dashboard from '../Pages/Admin/Dashboard'
@@ -27,7 +26,7 @@ const AppRoutes = () => {
             <Route index element={<HomePage/>} />
             <Route path='courses' element={<Courses/>}/>
             <Route path='principal' element={<PrincipalDesk/>}/>
-            <Route path='courses/:slug' element={<CourseDetails/>}/>
+            {/* <Route path='courses/:slug' element={<CourseDetails/>}/> */}
             <Route path='admission' element={<Admission/>}/>
             <Route path='gallery' element={<Gallery/>}/>
             <Route path='about' element={<About/>}/>
