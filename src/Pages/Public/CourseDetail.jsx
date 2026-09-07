@@ -5,7 +5,7 @@ import { courses } from "../../data/courses";
 import { subjects } from "../../data/subject";
 import { teachers } from "../../data/teachers";
 
-import Container from "../../Components/ui/Container";
+import Container from "../../Components/UI/Container";
 
 const CourseDetails = () => {
   const { slug } = useParams();

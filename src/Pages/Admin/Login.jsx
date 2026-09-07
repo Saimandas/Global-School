@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Lock, User, School } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Container from "../../Components/ui/Container";
-import Button from "../../Components/ui/Button";
+import Container from "../../Components/UI/Container";
+import Button from "../../Components/UI/Button";
 
 const data = {
   username:import.meta.env.VITE_ADMIN_USERNAME,

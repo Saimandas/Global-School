@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight, Users } from "lucide-react";
 import {academicPrograms} from '../../data/academicProgramsData'
-import Button from "../../Components/ui/Button";
+import Button from "../../Components/UI/Button";
 import Container from "../../Components/UI/Container";
 import { useNavigate } from "react-router-dom";
 

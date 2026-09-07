@@ -6,8 +6,8 @@ import {
   Clock,
 } from "lucide-react";
 
-import Container from "../../Components/ui/Container";
-import Button from "../../Components/ui/Button";
+import Container from "../../Components/UI/Container";
+import Button from "../../Components/UI/Button";
 
 const Contact = () => {
   return (

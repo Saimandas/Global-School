@@ -11,7 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Container from "../../Components/ui/Container";
+import Container from "../../Components/UI/Container";
 import { getDashboardData } from "../../superbase/supabase";
 
 const Dashboard = () => {

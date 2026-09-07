@@ -9,7 +9,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import Container from "../../Components/ui/Container";
+import Container from "../../Components/UI/Container";
 
 const Admission = () => {
   return (

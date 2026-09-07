@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Container from "../../Components/ui/Container";
+import Container from "../../Components/UI/Container";
 import {
   X,
   ChevronLeft,
