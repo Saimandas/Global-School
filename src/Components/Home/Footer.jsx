@@ -35,6 +35,8 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <Container>
         <div className="grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
+
+          {/* School Information */}
           <div>
             <Link to="/" className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
@@ -45,6 +47,7 @@ const Footer = () => {
                 <h2 className="font-heading text-2xl font-bold">
                   Global School
                 </h2>
+
                 <p className="text-sm text-primary-foreground/70">
                   Learn • Grow • Achieve
                 </p>
@@ -53,13 +56,15 @@ const Footer = () => {
 
             <p className="mt-6 leading-7 text-primary-foreground/80">
               Global School is committed to providing quality education,
-              innovation, and holistic development while preparing students for
-              a successful future.
+              innovation, and holistic development while preparing students
+              for a successful future.
             </p>
 
+            {/* Social Media */}
             <div className="mt-8 flex gap-4">
               <a
                 href="#"
+                aria-label="Facebook"
                 className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition-all duration-300 hover:bg-white hover:text-primary"
               >
                 <FaFacebookF size={18} />
@@ -67,6 +72,7 @@ const Footer = () => {
 
               <a
                 href="#"
+                aria-label="Instagram"
                 className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition-all duration-300 hover:bg-white hover:text-primary"
               >
                 <FaInstagram size={18} />
@@ -74,6 +80,7 @@ const Footer = () => {
 
               <a
                 href="#"
+                aria-label="YouTube"
                 className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 transition-all duration-300 hover:bg-white hover:text-primary"
               >
                 <FaYoutube size={18} />
@@ -81,8 +88,11 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-semibold">Quick Links</h3>
+            <h3 className="text-xl font-semibold">
+              Quick Links
+            </h3>
 
             <ul className="mt-6 space-y-3">
               {quickLinks.map((link) => (
@@ -98,8 +108,11 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Academic Programs */}
           <div>
-            <h3 className="text-xl font-semibold">Academic Programs</h3>
+            <h3 className="text-xl font-semibold">
+              Academic Programs
+            </h3>
 
             <ul className="mt-6 space-y-3 text-primary-foreground/80">
               <li>Pre-Primary</li>
@@ -109,12 +122,21 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* School Contact */}
           <div>
-            <h3 className="text-xl font-semibold">Contact Us</h3>
+            <h3 className="text-xl font-semibold">
+              Contact Us
+            </h3>
 
             <div className="mt-6 space-y-5">
+
+              {/* Address */}
               <div className="flex items-start gap-3">
-                <MapPin className="mt-1 shrink-0" size={20} />
+                <MapPin
+                  className="mt-1 shrink-0"
+                  size={20}
+                />
+
                 <p className="text-primary-foreground/80">
                   Global School
                   <br />
@@ -122,28 +144,50 @@ const Footer = () => {
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone size={20} />
-                <a
-                  href="tel:++918812018503"
-                  className="text-primary-foreground/80 hover:text-white"
-                >
-                 +91 8812018503 <br /> +91 8472043949.
-                </a>
-              </div>
-              
+              {/* School Phone */}
+              <div className="flex items-start gap-3">
+                <Phone
+                  className="mt-1 shrink-0"
+                  size={20}
+                />
 
-              <div className="flex items-center gap-3">
-                <Mail size={20} />
+                <div>
+                  <p className="text-primary-foreground/80">
+                    <a
+                      href="tel:+918812018503"
+                      className="transition-colors hover:text-white"
+                    >
+                      +91 8812018503
+                    </a>
+                    <br />
+
+                    <a
+                      href="tel:+918472043949"
+                      className="transition-colors hover:text-white"
+                    >
+                      +91 8472043949
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* School Email */}
+              <div className="flex items-start gap-3">
+                <Mail
+                  className="mt-1 shrink-0"
+                  size={20}
+                />
+
                 <a
-                  href="mailto:info@globalschool.com"
-                  className="text-primary-foreground/80 hover:text-white"
+                  href="mailto:info@globalschool.edu.in"
+                  className="break-all text-primary-foreground/80 transition-colors hover:text-white"
                 >
-                  info@globalschool.com
+                  info@globalschool.edu.in
                 </a>
               </div>
             </div>
 
+            {/* Back To Top */}
             <button
               onClick={scrollToTop}
               className="mt-8 flex items-center gap-2 rounded-xl bg-white/10 px-4 py-3 transition-all duration-300 hover:bg-white hover:text-primary"
@@ -154,7 +198,63 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* ============================= */}
+        {/* WEBSITE SUPPORT - KT ASSAM */}
+        {/* ============================= */}
+
+        <div className="border-t border-white/10 py-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+
+            {/* Support Title */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-white">
+                Website Support
+              </p>
+
+              <p className="mt-1 text-sm text-primary-foreground/60">
+                For website related support and assistance
+              </p>
+            </div>
+
+            {/* KT Assam Contact Box */}
+            <div className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 md:w-auto md:min-w-[300px]">
+
+              {/* Phone */}
+              <a
+                href="tel:+916002079492"
+                className="flex items-center gap-3 text-sm font-medium text-white transition-colors hover:text-yellow-300"
+              >
+                <Phone
+                  size={18}
+                  className="shrink-0 text-yellow-300"
+                />
+
+                <span>
+                  +91 6002079492
+                </span>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:ktassam13@gmail.com"
+                className="mt-3 flex items-center gap-3 text-sm font-medium text-white transition-colors hover:text-yellow-300"
+              >
+                <Mail
+                  size={18}
+                  className="shrink-0 text-white/70"
+                />
+
+                <span className="break-all">
+                  ktassam13@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Copyright */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-center md:flex-row">
+
           <p className="text-sm text-primary-foreground/70">
             © 2026 Global School. All Rights Reserved.
           </p>
@@ -162,8 +262,10 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/70">
             Designed & Developed by{" "}
             <span className="font-semibold text-white">
-              KT Assam            </span>
+              KT Assam
+            </span>
           </p>
+
         </div>
       </Container>
     </footer>
