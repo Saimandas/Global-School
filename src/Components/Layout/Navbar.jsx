@@ -58,14 +58,14 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           
           {/* Apply Now - Desktop */}
-          <NavLink
+          {/* <NavLink
             to="/admission"
             className="hidden lg:block"
           >
             <Button>
               Apply Now
             </Button>
-          </NavLink>
+          </NavLink> */}
 
           {/* Mobile Menu Button */}
           <button
