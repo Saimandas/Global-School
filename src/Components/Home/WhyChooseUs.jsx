@@ -31,13 +31,13 @@ const features = [
       "Well-equipped science and computer laboratories encourage practical learning and innovation.",
     icon: Microscope,
   },
-  {
-    id: 4,
-    title: "Safe Campus",
-    description:
-      "A secure campus with CCTV surveillance, disciplined environment, and student safety as our priority.",
-    icon: ShieldCheck,
-  },
+  // {
+  //   id: 4,
+  //   title: "Safe Campus",
+  //   description:
+  //     "A secure campus with CCTV surveillance, disciplined environment, and student safety as our priority.",
+  //   icon: ShieldCheck,
+  // },
   {
     id: 5,
     title: "Sports & Activities",
