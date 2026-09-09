@@ -3,7 +3,7 @@ import Container from "../../Components/UI/Container";
 import { readData } from "../../superbase/supabase";
 
 const StaffCardSkeleton = () => (
-  <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+  <div className="w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
     <div className="h-56 w-full animate-pulse bg-muted" />
 
     <div className="space-y-3 p-5">
@@ -18,6 +18,10 @@ const Teachers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [selectedTeacher, setSelectedTeacher] = useState(null);
+
+  /* =========================
+     FETCH TEACHERS
+  ========================== */
 
   useEffect(() => {
     const fetchTeachers = async () => {
@@ -39,7 +43,90 @@ const Teachers = () => {
     fetchTeachers();
   }, []);
 
-  // Close modal with Escape key
+  /* =========================
+     SEO
+  ========================== */
+
+  useEffect(() => {
+    const title =
+      "Teachers | Global School, Saljhora, Bongaigaon, Assam";
+
+    const description =
+      "Meet the teaching staff of Global School, Saljhora, Bongaigaon, Assam. Learn more about our dedicated teachers and their qualifications.";
+
+    document.title = title;
+
+    let descriptionTag = document.querySelector(
+      'meta[name="description"]'
+    );
+
+    if (!descriptionTag) {
+      descriptionTag = document.createElement("meta");
+      descriptionTag.setAttribute("name", "description");
+      document.head.appendChild(descriptionTag);
+    }
+
+    descriptionTag.setAttribute("content", description);
+
+    let robotsTag = document.querySelector(
+      'meta[name="robots"]'
+    );
+
+    if (!robotsTag) {
+      robotsTag = document.createElement("meta");
+      robotsTag.setAttribute("name", "robots");
+      document.head.appendChild(robotsTag);
+    }
+
+    robotsTag.setAttribute("content", "index, follow");
+
+    let canonicalTag = document.querySelector(
+      'link[rel="canonical"]'
+    );
+
+    if (!canonicalTag) {
+      canonicalTag = document.createElement("link");
+      canonicalTag.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalTag);
+    }
+
+    canonicalTag.setAttribute(
+      "href",
+      "https://theglobalschoolsaljhora.in/teachers"
+    );
+
+    let ogTitle = document.querySelector(
+      'meta[property="og:title"]'
+    );
+
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+
+    ogTitle.setAttribute("content", title);
+
+    let ogDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
+
+    if (!ogDescription) {
+      ogDescription = document.createElement("meta");
+      ogDescription.setAttribute(
+        "property",
+        "og:description"
+      );
+      document.head.appendChild(ogDescription);
+    }
+
+    ogDescription.setAttribute("content", description);
+  }, []);
+
+  /* =========================
+     ESCAPE TO CLOSE
+  ========================== */
+
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -54,20 +141,42 @@ const Teachers = () => {
     };
   }, []);
 
+  /* =========================
+     LOCK BACKGROUND SCROLL
+  ========================== */
+
+  useEffect(() => {
+    if (selectedTeacher) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedTeacher]);
+
   return (
     <>
-      <section className="py-12">
+      {/* =====================================================
+          TEACHERS
+      ====================================================== */}
+
+      <section className="w-full overflow-x-hidden py-12">
         <Container>
           {/* Heading */}
+
           <div className="mb-8">
-            <h2 className="font-heading text-2xl font-bold text-foreground lg:text-3xl">
+            <h1 className="font-heading text-2xl font-bold text-foreground lg:text-3xl">
               Teaching Staff
-            </h2>
+            </h1>
 
             <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
           </div>
 
           {/* Error */}
+
           {error && (
             <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-center text-sm text-red-600">
               {error}
@@ -75,32 +184,39 @@ const Teachers = () => {
           )}
 
           {/* Loading */}
+
           {isLoading ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid w-full gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {Array.from({ length: 8 }).map((_, index) => (
                 <StaffCardSkeleton key={index} />
               ))}
             </div>
           ) : teachers.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            /* =================================================
+               TEACHER CARDS
+            ================================================== */
+
+            <div className="grid w-full min-w-0 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {teachers.map((staff) => (
                 <button
                   key={staff.id}
                   type="button"
                   onClick={() => setSelectedTeacher(staff)}
-                  className="group overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  className="group block w-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 >
                   {/* Image */}
+
                   <div className="relative flex h-56 w-full items-center justify-center overflow-hidden bg-muted">
                     <img
                       src={staff.file}
-                      alt={staff.name}
+                      alt={`${staff.name} - Global School, Saljhora, Bongaigaon`}
                       className="h-full w-full object-cover object-[center_10%] transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
 
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {/* Desktop hover */}
+
+                    <div className="absolute inset-0 hidden items-end bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex">
                       <span className="w-full p-4 text-center text-sm font-medium text-white">
                         View Details
                       </span>
@@ -108,13 +224,14 @@ const Teachers = () => {
                   </div>
 
                   {/* Details */}
-                  <div className="p-5 text-center">
-                    <h3 className="font-heading text-lg font-semibold text-card-foreground">
+
+                  <div className="w-full min-w-0 p-5 text-center">
+                    <h2 className="break-words font-heading text-lg font-semibold text-card-foreground">
                       {staff.name}
-                    </h3>
+                    </h2>
 
                     {staff.qualification && (
-                      <p className="mt-1 text-sm text-muted-foreground">
+                      <p className="mt-1 break-words text-sm text-muted-foreground">
                         {staff.qualification}
                       </p>
                     )}
@@ -123,6 +240,8 @@ const Teachers = () => {
               ))}
             </div>
           ) : (
+            /* Empty */
+
             <div className="rounded-2xl border border-dashed border-border py-12 text-center">
               <p className="text-sm text-muted-foreground">
                 No teaching staff available.
@@ -132,86 +251,113 @@ const Teachers = () => {
         </Container>
       </section>
 
-      {/* Teacher Details Modal */}
+      {/* =====================================================
+          TEACHER MODAL
+      ====================================================== */}
+
       {selectedTeacher && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] flex h-[100dvh] w-screen items-center justify-center overflow-x-hidden overflow-y-auto bg-black/60 p-3 backdrop-blur-sm sm:p-4"
           onClick={() => setSelectedTeacher(null)}
         >
+          {/* =================================================
+              MODAL CONTAINER
+          ================================================== */}
+
           <div
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-background shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+            className="relative my-auto flex w-[calc(100vw-24px)] min-w-0 max-w-2xl flex-col overflow-hidden rounded-2xl bg-background shadow-2xl sm:w-[calc(100vw-32px)] sm:rounded-3xl"
             onClick={(event) => event.stopPropagation()}
           >
             {/* Close Button */}
+
             <button
               type="button"
               onClick={() => setSelectedTeacher(null)}
-              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/50 text-xl text-white transition-colors hover:bg-black/70"
-              aria-label="Close"
+              aria-label="Close teacher details"
+              className="absolute right-3 top-3 z-30 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black/60 text-2xl leading-none text-white transition-colors hover:bg-black/80 focus:outline-none focus:ring-2 focus:ring-white sm:right-4 sm:top-4"
             >
               ×
             </button>
 
-            <div className="grid md:grid-cols-2">
-              {/* Large Image */}
-              <div className="flex min-h-[320px] items-center justify-center overflow-hidden bg-muted">
-                <img
-                  src={selectedTeacher.file}
-                  alt={selectedTeacher.name}
-                  className="h-full max-h-[500px] w-full object-cover object-[center_20%]"
-                />
-              </div>
+            {/* =================================================
+                SCROLLABLE CONTENT
+            ================================================== */}
 
-              {/* Information */}
-              <div className="flex flex-col justify-center p-7">
-                <p className="mb-2 text-sm font-medium uppercase tracking-wider text-primary">
-                  Teaching Staff
-                </p>
+            <div className="max-h-[90dvh] min-w-0 overflow-x-hidden overflow-y-auto">
+              {/* =================================================
+                  MOBILE = 1 COLUMN
+                  DESKTOP = 2 COLUMNS
+              ================================================== */}
 
-                <h2 className="font-heading text-2xl font-bold text-foreground">
-                  {selectedTeacher.name}
-                </h2>
+              <div className="grid min-w-0 grid-cols-1 md:grid-cols-2">
+                {/* =================================================
+                    IMAGE
+                ================================================== */}
 
-                {selectedTeacher.qualification && (
-                  <p className="mt-2 text-muted-foreground">
-                    {selectedTeacher.qualification}
+                <div className="relative h-64 w-full min-w-0 overflow-hidden bg-muted sm:h-80 md:h-full md:min-h-[420px]">
+                  <img
+                    src={selectedTeacher.file}
+                    alt={`${selectedTeacher.name} - Global School, Saljhora, Bongaigaon`}
+                    className="block h-full w-full object-cover object-[center_20%]"
+                  />
+                </div>
+
+                {/* =================================================
+                    INFORMATION
+                ================================================== */}
+
+                <div className="flex min-w-0 flex-col justify-center p-5 sm:p-7 md:p-8">
+                  <p className="mb-2 text-sm font-medium uppercase tracking-wider text-primary">
+                    Teaching Staff
                   </p>
-                )}
 
-                <div className="my-6 h-px bg-border" />
+                  <h2 className="break-words font-heading text-2xl font-bold leading-tight text-foreground sm:text-3xl">
+                    {selectedTeacher.name}
+                  </h2>
 
-                <div className="space-y-4">
-                  {/* Email */}
-                  {selectedTeacher.email && (
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                        Email
-                      </p>
-
-                      <a
-                        href={`mailto:${selectedTeacher.email}`}
-                        className="mt-1 block break-all text-sm font-medium text-foreground transition-colors hover:text-primary"
-                      >
-                        {selectedTeacher.email}
-                      </a>
-                    </div>
+                  {selectedTeacher.qualification && (
+                    <p className="mt-2 break-words text-sm text-muted-foreground sm:text-base">
+                      {selectedTeacher.qualification}
+                    </p>
                   )}
 
-                  {/* Phone
-                  {selectedTeacher.phone && (
-                    <div>
-                      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                        Phone
-                      </p>
+                  <div className="my-5 h-px w-full bg-border sm:my-6" />
 
-                      <a
-                        href={`tel:${selectedTeacher.phone}`}
-                        className="mt-1 block text-sm font-medium text-foreground transition-colors hover:text-primary"
-                      >
-                        {selectedTeacher.phone}
-                      </a>
-                    </div>
-                  )} */}
+                  <div className="min-w-0 space-y-4">
+                    {/* Email */}
+
+                    {selectedTeacher.email && (
+                      <div className="min-w-0">
+                        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                          Email
+                        </p>
+
+                        <a
+                          href={`mailto:${selectedTeacher.email}`}
+                          className="mt-1 block break-all text-sm font-medium text-foreground transition-colors hover:text-primary"
+                        >
+                          {selectedTeacher.email}
+                        </a>
+                      </div>
+                    )}
+
+                    {/* Phone */}
+
+                    {selectedTeacher.phone && (
+                      <div className="min-w-0">
+                        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                          Phone
+                        </p>
+
+                        <a
+                          href={`tel:${selectedTeacher.phone}`}
+                          className="mt-1 block break-all text-sm font-medium text-foreground transition-colors hover:text-primary"
+                        >
+                          {selectedTeacher.phone}
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
