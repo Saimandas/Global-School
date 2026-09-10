@@ -17,9 +17,7 @@ import Container from "../UI/Container";
 const quickLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Academic Programs", path: "/academics" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Notice & Events", path: "/updates" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -117,8 +115,6 @@ const Footer = () => {
             <ul className="mt-6 space-y-3 text-primary-foreground/80">
               <li>Pre-Primary</li>
               <li>Primary</li>
-              <li>Secondary</li>
-              <li>Higher Secondary</li>
             </ul>
           </div>
 

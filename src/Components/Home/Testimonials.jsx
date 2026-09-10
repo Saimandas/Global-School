@@ -10,7 +10,7 @@ const staffMembers = [
   {
     id: 1,
     name: "Dr. Anil Sharma",
-    role: "Principal",
+    role: "Chairman",
     image: '/staff/Principal.JPG',
     icon: GraduationCap,
   },
@@ -35,6 +35,14 @@ const staffMembers = [
     image: "staff/Rangina Brahma.jpeg",
     icon: BookOpen,
   },
+  {
+    id: 5,
+    name: "Kamakhya Prasad Das",
+    role: "Teacher",
+    image: "staff/KamakhyaPrasad.jpeg",
+    icon: BookOpen,
+  }, 
+  
 ];
 
 const Testimonials = () => {
