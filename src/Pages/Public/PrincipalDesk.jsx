@@ -51,11 +51,11 @@ const PrincipalDesk = () => {
                 <div className="border-t border-border/60 bg-background p-5">
 
                   <h2 className="font-heading text-xl font-bold text-foreground">
-                    Principal's Desk
+                    Chairman's Desk
                   </h2>
 
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Jatiya Vidyalaya
+                    Global School
                   </p>
 
                 </div>
@@ -71,7 +71,7 @@ const PrincipalDesk = () => {
             <div className="min-w-0">
 
               <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                Principal's Desk
+                Chairman's Desk
               </span>
 
               <h1 className="mt-6 font-heading text-4xl font-bold leading-tight text-foreground sm:text-5xl">
@@ -81,7 +81,7 @@ const PrincipalDesk = () => {
                 <br />
 
                 <span className="text-accent">
-                  Our Principal
+                  Our Chairman
                 </span>
 
               </h1>
@@ -124,11 +124,11 @@ const PrincipalDesk = () => {
               <div className="mt-8">
 
                 <p className="font-heading text-lg font-semibold text-foreground">
-                  Dr. Principal Name
+                  Prafulla Kumar Brahma
                 </p>
 
                 <p className="mt-1 text-sm text-primary">
-                  Principal
+                  Chairman
                 </p>
 
               </div>
@@ -143,7 +143,7 @@ const PrincipalDesk = () => {
 
 
       {/* =====================================================
-          PRINCIPAL'S MESSAGE
+          Chairman's MESSAGE
       ===================================================== */}
 
       <section className="py-16 md:py-20">
@@ -223,11 +223,11 @@ const PrincipalDesk = () => {
                   </p>
 
                   <p className="mt-2 font-heading text-lg font-bold text-primary">
-                    Dr. Principal Name
+                    Prafulla Kumar Brahma
                   </p>
 
                   <p className="text-sm text-muted-foreground">
-                    Principal, Jatiya Vidyalaya
+                    Chairman, Global School
                   </p>
 
                 </div>
