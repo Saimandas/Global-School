@@ -67,17 +67,17 @@ const Achievements = () => {
             return (
               <div
                 key={item.id}
-                className="group rounded-3xl border border-border bg-card p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group   border border-border bg-[url('/LotusLeaf.png')] bg-center bg-contain bg-no-repeat  text-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full  text-white transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon size={30} />
                 </div>
 
-                <h3 className="mt-7 text-xl font-semibold text-card-foreground">
+                <h3 className="mt-7 text-xl font-semibold text-white">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-muted-foreground">
+                <p className="mt-4 leading-7 text-white text-lg ">
                   {item.description}
                 </p>
               </div>

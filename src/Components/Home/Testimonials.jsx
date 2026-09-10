@@ -9,7 +9,7 @@ import {
 const staffMembers = [
   {
     id: 1,
-    name: "Dr. Anil Sharma",
+    name: "Prafulla Kumar Brahma",
     role: "Chairman",
     image: '/staff/Principal.JPG',
     icon: GraduationCap,

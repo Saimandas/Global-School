@@ -20,20 +20,23 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 border-b border-border bg-green-500 text-white backdrop-blur-lg">
       
       {/* Main Navbar */}
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-around px-6 lg:px-3">
         
         {/* Logo */}
+       <div className=" flex justify-between items-center gap-4">
         <NavLink to="/" className="select-none">
           <img
             height="75"
             width="75"
             src={img}
-            alt="Global School"
+            alt="The Global School"
           />
         </NavLink>
+        <h1 className=" text-3xl font-bold text-yellow-300">The Global School</h1>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">

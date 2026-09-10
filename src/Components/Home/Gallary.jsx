@@ -20,8 +20,8 @@ const Gallery = () => {
   return (
     <section className="py-24">
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+        <div className="mx-auto bg-green-300 p-3 rounded-2xl max-w-3xl text-center">
+          <span className="inline-flex rounded-full bg-yellow-300 px-4 py-2 text-sm font-medium text-black">
             Gallery
           </span>
 
@@ -29,7 +29,7 @@ const Gallery = () => {
             Moments That Inspire
           </h2>
 
-          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+          <p className="mt-5 text-lg leading-8 text-black">
             Explore memorable moments from our classrooms, campus life,
             celebrations, sports, and student activities.
           </p>

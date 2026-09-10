@@ -198,22 +198,20 @@ const Footer = () => {
         {/* WEBSITE SUPPORT - KT ASSAM */}
         {/* ============================= */}
 
-        <div className="border-t border-white/10 py-8">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="border-t border-white/10 py-2 rounded-md">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between px-3">
 
             {/* Support Title */}
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-white">
-                Website Support
-              </p>
-
-              <p className="mt-1 text-sm text-primary-foreground/60">
-                For website related support and assistance
-              </p>
+            <div className=" font-semibold p-3 bg-black text-white rounded-md ">
+              <h1>This site devloped by </h1>
+              <h2>Kavyam Technology Assam</h2>
+            </div>
+            <div className=" bg-[url('/BgLeaf.webp')]">
+              <img src="/staff/Aronai.jpg" height={'85px'} width={"155px"}  alt="" />
             </div>
 
             {/* KT Assam Contact Box */}
-            <div className="w-full rounded-2xl border border-white/10 bg-white/5 px-6 py-5 md:w-auto md:min-w-[300px]">
+            <div className="w-full  p-3 bg-black text-white rounded-md px-6 py-5 md:w-auto md:min-w-[300px]">
 
               {/* Phone */}
               <a

@@ -48,13 +48,13 @@ const PrincipalDesk = () => {
 
                 </div>
 
-                <div className="border-t border-border/60 bg-background p-5">
+                <div className="border-t border-border/60 bg-[#133458]  p-5">
 
-                  <h2 className="font-heading text-xl font-bold text-foreground">
+                  <h2 className="font-heading text-xl font-bold text-white">
                     Chairman's Desk
                   </h2>
 
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-sm text-white">
                     Global School
                   </p>
 

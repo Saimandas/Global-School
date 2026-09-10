@@ -53,21 +53,21 @@ const Academic = () => {
             return (
               <div
                 key={program.id}
-                className="group flex min-h-80 flex-col rounded-3xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex min-h-80 flex-col rounded-3xl border border-border bg-green-400 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <Icon size={32} />
                 </div>
 
-                <h3 className="mt-8 text-2xl font-semibold text-card-foreground">
+                <h3 className="mt-8 text-2xl font-semibold text-white">
                   {program.title}
                 </h3>
 
-                <p className="mt-2 font-medium text-primary">
+                <p className="mt-2 font-medium text-white">
                   {program.classes}
                 </p>
 
-                <p className="mt-5 leading-7 text-muted-foreground">
+                <p className="mt-5 leading-7 text-lg text-white">
                   {program.description}
                 </p>
 
