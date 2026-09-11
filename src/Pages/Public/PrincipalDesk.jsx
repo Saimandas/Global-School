@@ -42,7 +42,7 @@ const PrincipalDesk = () => {
 
                   <img
                     src="/staff/Principal.JPG"
-                    alt="Principal of Jatiya Vidyalaya"
+                    alt="Principal of The Global School"
                     className="h-full w-full object-cover object-[center_10%]"
                   />
 
@@ -104,7 +104,7 @@ const PrincipalDesk = () => {
               <div className="mt-8">
 
                 <p className="text-base leading-8 text-muted-foreground">
-                  At Jatiya Vidyalaya, we believe that every child
+                  At Global School we believe that every child
                   possesses unique abilities and deserves an environment
                   where those abilities can flourish. Our aim is to
                   provide students with quality education while
@@ -184,7 +184,7 @@ const PrincipalDesk = () => {
 
                 <p className="text-base leading-8 text-muted-foreground">
                   It gives me immense pleasure to welcome you to
-                  Jatiya Vidyalaya. Our school is committed to
+                  The Global School. Our school is committed to
                   providing an educational experience that goes
                   beyond textbooks and examinations. We believe that
                   true education develops the mind, strengthens
