@@ -42,7 +42,7 @@ const PrincipalDesk = () => {
 
                   <img
                     src="/staff/Principal.JPG"
-                    alt="Principal of The Global School"
+                    alt="Principal of The The Global School"
                     className="h-full w-full object-cover object-[center_10%]"
                   />
 
@@ -55,7 +55,7 @@ const PrincipalDesk = () => {
                   </h2>
 
                   <p className="mt-1 text-sm text-white">
-                    Global School
+                    The Global School
                   </p>
 
                 </div>
@@ -104,7 +104,7 @@ const PrincipalDesk = () => {
               <div className="mt-8">
 
                 <p className="text-base leading-8 text-muted-foreground">
-                  At Global School we believe that every child
+                  At The Global School we believe that every child
                   possesses unique abilities and deserves an environment
                   where those abilities can flourish. Our aim is to
                   provide students with quality education while
@@ -184,7 +184,7 @@ const PrincipalDesk = () => {
 
                 <p className="text-base leading-8 text-muted-foreground">
                   It gives me immense pleasure to welcome you to
-                  The Global School. Our school is committed to
+                  The The Global School. Our school is committed to
                   providing an educational experience that goes
                   beyond textbooks and examinations. We believe that
                   true education develops the mind, strengthens
@@ -227,7 +227,7 @@ const PrincipalDesk = () => {
                   </p>
 
                   <p className="text-sm text-muted-foreground">
-                    Chairman, Global School
+                    Chairman, The Global School
                   </p>
 
                 </div>

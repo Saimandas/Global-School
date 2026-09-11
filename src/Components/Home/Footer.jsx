@@ -43,7 +43,7 @@ const Footer = () => {
 
               <div>
                 <h2 className="font-heading text-2xl font-bold">
-                  Global School
+                 The Global School
                 </h2>
 
                 <p className="text-sm text-primary-foreground/70">
@@ -53,7 +53,7 @@ const Footer = () => {
             </Link>
 
             <p className="mt-6 leading-7 text-primary-foreground/80">
-              Global School is committed to providing quality education,
+             The Global School is committed to providing quality education,
               innovation, and holistic development while preparing students
               for a successful future.
             </p>
@@ -134,7 +134,7 @@ const Footer = () => {
                 />
 
                 <p className="text-primary-foreground/80">
-                  Global School
+                 The Global School
                   <br />
                   Saljhora, Kajalgaon, Chirang, Assam.
                 </p>
@@ -250,7 +250,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-6 text-center md:flex-row">
 
           <p className="text-sm text-primary-foreground/70">
-            © 2026 Global School. All Rights Reserved.
+            © 2026The Global School. All Rights Reserved.
           </p>
 
           <p className="text-sm text-primary-foreground/70">

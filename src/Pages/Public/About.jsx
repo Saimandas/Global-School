@@ -23,11 +23,11 @@ const About = () => {
             <div className="p-10">
 
               <h1 className="text-4xl font-bold">
-                About Global School
+                About The Global School
               </h1>
 
               <p className="mt-6 leading-8 text-muted-foreground">
-                Global School is committed to providing quality education
+                The Global School is committed to providing quality education
                 in a safe, disciplined and student-friendly environment.
                 We believe that education is not only about academic
                 excellence but also about developing character,
