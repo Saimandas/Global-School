@@ -20,35 +20,43 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-green-500 text-white backdrop-blur-lg">
-      
-      {/* Main Navbar */}
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-around px-6 lg:px-3">
-        
-        {/* Logo */}
-       <div className=" flex justify-between items-center gap-4">
-        <NavLink to="/" className="select-none">
-          <img
-            height="75"
-            width="75"
-            src={img}
-            alt="The Global School"
-          />
-        </NavLink>
-        <h1 className=" text-3xl font-bold text-yellow-300">The Global School</h1>
+    <header className="sticky top-0 z-50 border-b border-green-200 bg-green-600 text-white backdrop-blur-lg">
+      {/* =========================
+          MAIN NAVBAR
+      ========================== */}
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-3">
+        {/* =========================
+            LOGO
+        ========================== */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <NavLink to="/" className="select-none">
+            <img
+              height="75"
+              width="75"
+              src={img}
+              alt="The Global School"
+              className="h-14 w-14 object-contain sm:h-[75px] sm:w-[75px]"
+            />
+          </NavLink>
+
+          <h1 className="hidden text-2xl font-bold text-yellow-300 sm:block sm:text-3xl">
+            The Global School
+          </h1>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* =========================
+            DESKTOP NAVIGATION
+        ========================== */}
         <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `font-medium transition ${
+                `font-medium transition-colors ${
                   isActive
-                    ? "text-primary"
-                    : "hover:text-primary"
+                    ? "text-yellow-300"
+                    : "text-white hover:text-yellow-300"
                 }`
               }
             >
@@ -57,23 +65,27 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Right Side */}
+        {/* =========================
+            RIGHT SIDE
+        ========================== */}
         <div className="flex items-center gap-3">
-          
           {/* Apply Now - Desktop */}
-          {/* <NavLink
+          {/*
+          <NavLink
             to="/admission"
             className="hidden lg:block"
           >
             <Button>
               Apply Now
             </Button>
-          </NavLink> */}
+          </NavLink>
+          */}
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(true)}
-            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border hover:bg-muted lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/40 bg-white/10 text-white transition hover:bg-white/20 lg:hidden"
             aria-label="Open menu"
             aria-expanded={isOpen}
           >
@@ -82,61 +94,76 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* =========================
+          MOBILE OVERLAY
+      ========================== */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 lg:hidden ${
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
         }`}
+        aria-hidden="true"
       />
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-80 flex-col bg-card shadow-2xl transition-transform duration-300 lg:hidden ${
-          isOpen
-            ? "translate-x-0"
-            : "translate-x-full"
+      {/* =========================
+          MOBILE MENU / DRAWER
+      ========================== */}
+      <aside
+        className={`fixed right-0 top-0 z-50 flex h-[100dvh] w-[85%] max-w-sm flex-col bg-white text-green-900 shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
+          isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        {/* =========================
+            MOBILE MENU HEADER
+        ========================== */}
+        <div className="flex items-center border border-black justify-between border-b border-green-100 bg-white px-5 py-5">
+          <div className="flex items-center gap-3">
+            {/* Mobile Logo */}
+            <img
+              src={img}
+              alt="The Global School"
+              className="h-12 w-12 object-contain"
+            />
 
-        {/* Mobile Menu Header */}
-        <div className="flex items-center justify-between border-b border-border p-6">
-          
-          <div>
-            <h2 className="text-2xl font-bold">
-              <span className="text-primary">Global</span>{" "}
-              <span className="text-accent">School</span>
-            </h2>
+            <div>
+              <h2 className="text-xl font-bold leading-tight">
+                <span className="text-green-800">Global</span>{" "}
+                <span className="text-yellow-500">School</span>
+              </h2>
 
-            <p className="mt-1 text-xs uppercase tracking-[0.3em] text-muted-foreground">
-              Learn • Grow • Lead
-            </p>
+              <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-gray-500">
+                Learn • Grow • Lead
+              </p>
+            </div>
           </div>
 
           {/* Close Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(false)}
-            className="rounded-lg p-2 hover:bg-muted"
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-green-800 transition hover:bg-green-100"
             aria-label="Close menu"
           >
             <X size={24} />
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        <nav className="flex flex-1 flex-col gap-2 overflow-y-auto p-6">
+        {/* =========================
+            MOBILE NAVIGATION
+        ========================== */}
+        <nav className="flex flex-1 flex-col gap-2 overflow-y-auto bg-white p-5">
           {navLinks.map((item) => (
             <NavLink
               key={item.name}
               to={item.path}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
-                `rounded-xl px-4 py-3 text-lg transition ${
+                `block rounded-xl px-4 py-3 text-base font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-muted"
+                    ? "bg-green-800 text-white shadow-sm"
+                    : "bg-white text-green-900 hover:bg-green-50 hover:text-green-800"
                 }`
               }
             >
@@ -144,12 +171,14 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          {/* Apply Now - Mobile */}
+          {/* =========================
+              APPLY NOW - MOBILE
+          ========================== */}
           {/*
           <NavLink
             to="/admission"
             onClick={() => setIsOpen(false)}
-            className="mt-auto"
+            className="mt-auto pt-4"
           >
             <Button className="w-full">
               Apply Now
@@ -157,7 +186,7 @@ const Navbar = () => {
           </NavLink>
           */}
         </nav>
-      </div>
+      </aside>
     </header>
   );
 };
