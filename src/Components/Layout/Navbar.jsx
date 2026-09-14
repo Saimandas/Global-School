@@ -39,7 +39,7 @@ const Navbar = () => {
             />
           </NavLink>
 
-          <h1 className="hidden text-2xl font-bold text-yellow-300 sm:block sm:text-3xl">
+          <h1 className=" text-2xl font-bold text-yellow-300 sm:block sm:text-3xl">
             The Global School
           </h1>
         </div>
@@ -123,13 +123,13 @@ const Navbar = () => {
             {/* Mobile Logo */}
             <img
               src={img}
-              alt="The Global School"
+              alt="The The Global School"
               className="h-12 w-12 object-contain"
             />
 
             <div>
               <h2 className="text-xl font-bold leading-tight">
-                <span className="text-green-800">Global</span>{" "}
+                <span className="text-green-800">The Global</span>{" "}
                 <span className="text-yellow-500">School</span>
               </h2>
 
