@@ -203,7 +203,7 @@ const Footer = () => {
 
             {/* Support Title */}
             <div className=" font-semibold p-3 bg-black text-white rounded-md ">
-              <h1>This site devloped by </h1>
+              <h1>This site developed by </h1>
               <h2>Kavyam Technology Assam</h2>
             </div>
             <div className=" bg-[url('/BgLeaf.webp')]">
