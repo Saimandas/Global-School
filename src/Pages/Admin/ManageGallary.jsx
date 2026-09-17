@@ -76,6 +76,11 @@ const ManageGallery = () => {
   const [showUpdate, setShowUpdate] = useState(false);
   const [updateName, setUpdateName] = useState("");
 
+  const [showManageImages, setShowManageImages] = useState(false);
+  const [manageGallery, setManageGallery] = useState(null);
+  const [existingImageToDelete, setExistingImageToDelete] = useState(null);
+  const [showDeleteImage, setShowDeleteImage] = useState(false);
+
 
   /* =========================================================
      LOAD DATA
@@ -465,6 +470,51 @@ const ManageGallery = () => {
     } catch (error) {
       console.error(error);
       toast.error(error.message || "Failed to update gallery.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+
+  /* =========================================================
+     MANAGE EXISTING IMAGES
+  ========================================================= */
+
+  function openManageImages(gallery) {
+    setManageGallery(gallery);
+    setShowManageImages(true);
+  }
+
+  function closeManageImages() {
+    setManageGallery(null);
+    setShowManageImages(false);
+    setExistingImageToDelete(null);
+    setShowDeleteImage(false);
+  }
+
+  function openDeleteImage(image) {
+    setExistingImageToDelete(image);
+    setShowDeleteImage(true);
+  }
+
+  function closeDeleteImage() {
+    setExistingImageToDelete(null);
+    setShowDeleteImage(false);
+  }
+
+  async function handleDeleteImage() {
+    if (!existingImageToDelete) return;
+
+    try {
+      setLoading(true);
+      await deleteData("galleryImage", "Gallery", existingImageToDelete.id, existingImageToDelete.file);
+      await getGallery();
+      setManageGallery((previous) => previous ? { ...previous, images: previous.images.filter((image) => image.id !== existingImageToDelete.id) } : null);
+      toast.success("Image deleted successfully.");
+      closeDeleteImage();
+    } catch (error) {
+      console.error(error);
+      toast.error(error.message || "Failed to delete image.");
     } finally {
       setLoading(false);
     }
@@ -1731,7 +1781,17 @@ const ManageGallery = () => {
                           </Button>
 
 
-                          {/* ADD IMAGES */}
+                          {/* MANAGE EXISTING IMAGES */}
+
+                           <Button
+                             variant="secondary"
+                             onClick={() => openManageImages(gallery)}
+                             className="flex items-center gap-2"
+                           >
+                             <Images size={16} />
+                             Manage Images
+                           </Button>
+
 
                           <Button
                             onClick={() =>
@@ -1826,7 +1886,7 @@ const ManageGallery = () => {
                       <button
                         type="button"
                         onClick={() =>
-                          openAddImages(
+                          openManageImages(
                             gallery
                           )
                         }
@@ -1851,9 +1911,9 @@ const ManageGallery = () => {
                         "
                       >
 
-                        <Plus size={17} />
+                        <Images size={17} />
 
-                        Add More Images
+                        Manage Images
 
                       </button>
 
@@ -1868,6 +1928,69 @@ const ManageGallery = () => {
           )}
 
         </div>
+
+
+        {/* ===================================================
+            MANAGE EXISTING IMAGES MODAL
+        =================================================== */}
+
+        {showManageImages && manageGallery && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-5 backdrop-blur-sm">
+            <div className="max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-3xl bg-card p-6 sm:p-8">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-medium text-primary">Manage Images</p>
+                  <h2 className="mt-1 text-2xl font-bold sm:text-3xl">{manageGallery.name}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Add, remove or update this gallery.</p>
+                </div>
+                <button type="button" onClick={closeManageImages} className="rounded-full p-2 transition hover:bg-muted" aria-label="Close"><X /></button>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button onClick={() => { const gallery = manageGallery; closeManageImages(); openAddImages(gallery); }} className="flex items-center gap-2"><Plus size={17} /> Add More Images</Button>
+                <Button variant="secondary" onClick={() => { const gallery = manageGallery; closeManageImages(); openUpdate(gallery); }} className="flex items-center gap-2"><Pencil size={16} /> Update Name</Button>
+              </div>
+
+              <div className="mt-8">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="font-semibold">Existing Images</h3>
+                  <span className="text-sm text-muted-foreground">{manageGallery.images.length} photo{manageGallery.images.length !== 1 ? "s" : ""}</span>
+                </div>
+
+                {manageGallery.images.length === 0 ? (
+                  <div className="rounded-2xl border border-dashed border-border py-16 text-center"><ImageIcon size={50} className="mx-auto text-muted-foreground" /><p className="mt-4 font-semibold">No images in this gallery</p></div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                    {manageGallery.images.map((image) => (
+                      <div key={image.id} className="group relative overflow-hidden rounded-2xl border border-border bg-muted">
+                        <img src={image.file} alt={manageGallery.name} className="h-48 w-full object-contain bg-black/5 p-1 sm:h-52" />
+                        <button type="button" onClick={() => openDeleteImage(image)} disabled={loading} className="absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 disabled:opacity-50 sm:opacity-0 sm:group-hover:opacity-100" aria-label="Delete image" title="Delete image"><Trash2 size={16} /></button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ===================================================
+            DELETE EXISTING IMAGE MODAL
+        =================================================== */}
+
+        {showDeleteImage && existingImageToDelete && (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-5 backdrop-blur-sm">
+            <div className="w-full max-w-md rounded-3xl bg-card p-8">
+              <h2 className="text-2xl font-bold">Delete Image?</h2>
+              <p className="mt-3 text-muted-foreground">Are you sure you want to delete this image?</p>
+              <p className="mt-2 text-sm text-red-500">This will permanently remove the image from the gallery and storage.</p>
+              <div className="mt-8 flex justify-end gap-3">
+                <Button variant="secondary" onClick={closeDeleteImage} disabled={loading}>Cancel</Button>
+                <Button onClick={handleDeleteImage} disabled={loading} className="bg-red-600 hover:bg-red-700">{loading ? "Deleting..." : "Delete Image"}</Button>
+              </div>
+            </div>
+          </div>
+        )}
 
 
         {/* ===================================================
